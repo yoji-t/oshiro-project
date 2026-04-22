@@ -1,0 +1,749 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>お城プロジェクト関連</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="34944831-32d3-8015-b10d-f3fcf663faa5" class="page sans"><header><h1 class="page-title" dir="auto">お城プロジェクト関連</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h1 id="34944831-32d3-80c2-96ff-dd8ddc7bf1ff" class="">おすすめ城娘</h1></div><div style="display:contents" dir="auto"><h2 id="34944831-32d3-800d-b3cd-d5a6f2a02f83" class="">裏聚楽第</h2></div><div style="display:contents" dir="auto"><p id="34944831-32d3-8022-8507-e3273311f482" class=""><strong>[裏]聚楽第</strong>（うらじゅらくだい）の性能を解説・実戦紹介しているものです。<br/>動画の内容に基づき、[裏]聚楽第の強力なポイントをまとめました。<strong><br/>1. 特技・配置能力：圧倒的なコスト削減とデバフ</strong><br/>• <strong>計略消費気-2：</strong> 自身の射程内の城娘の計略消費を2軽減します。これは「閻魔の闘技場 統括地獄」のような、気力の管理が非常に厳しいマップで極めて有効なサポート能力です [<a href="http://www.youtube.com/watch?v=1BjGJz0n7sA&amp;t=19">00:19</a>]。<br/>• <strong>射程デバフ：</strong> 攻撃した敵の射程を2秒間50%低下させます。この「射程半分」という倍率は非常に高く、強力な妨害手段となります [<a href="http://www.youtube.com/watch?v=1BjGJz0n7sA&amp;t=41">00:41</a>]。<br/>• <strong>全地獄城娘へのバフ：</strong> 全ての地獄城娘の攻撃を150上昇させ、攻撃後の隙を35%短縮します [<a href="http://www.youtube.com/watch?v=1BjGJz0n7sA&amp;t=20">00:20</a>]。<strong><br/>2. 計略：広範囲の殲滅と足止め</strong><br/>• <strong>隠密・広域攻撃：</strong> 30秒間、自身の射程が1.3倍になり、敵から狙われなくなります。さらに射程内の全敵とその周囲に1.5倍のダメージを与えます [<a href="http://www.youtube.com/watch?v=1BjGJz0n7sA&amp;t=62">01:02</a>]。<br/>• <strong>移動速度低下（実質足止め）：</strong> 攻撃した敵の移動速度を1秒間100%低下させ、敵をその場に釘付けにできます [<a href="http://www.youtube.com/watch?v=1BjGJz0n7sA&amp;t=63">01:03</a>]。<br/>• <strong>アタッカー性能：</strong> 殲滅力に特化しており、動画内では「ショットガンタイプ」の超強力なアタッカーとして評価されています [<a href="http://www.youtube.com/watch?v=1BjGJz0n7sA&amp;t=117">01:57</a>]。<strong><br/>3. 持参武器とのシナジー</strong><br/>• [裏]聚楽第が持参する武器は、**「敵の移動速度が遅いほど与えるダメージが増える」**という特性を持っています。自身の計略で移動速度を0にできるため、この武器を装備することで凄まじい火力を発揮します [<a href="http://www.youtube.com/watch?v=1BjGJz0n7sA&amp;t=131">02:11</a>]。<strong><br/>4. 実戦での活躍</strong><br/>• 動画の後半では、最新の超難関マップである「エンマの闘技場 統括地獄 7層」のマックス審議に挑戦しており、計略消費軽減と高い殲滅力によって安定した攻略を実現しています [<a href="http://www.youtube.com/watch?v=1BjGJz0n7sA&amp;t=151">02:31</a>]。<br/>サポートと殲滅の両面で「ぶっ壊れ」と評されるほどの性能を持っており、特に地獄属性の編成においては中心的な役割を果たす城娘です。<br/>動画URL: <a href="https://www.youtube.com/watch?v=1BjGJz0n7sA">https://www.youtube.com/watch?v=1BjGJz0n7sA</a><br/></p></div><div style="display:contents" dir="auto"><p id="34944831-32d3-80bf-8a18-dc779ea0a491" class="">
+</p></div><div style="display:contents" dir="auto"><h2 id="34944831-32d3-804d-bfcf-dbf4ac14210c" class="">暁星　大阪城</h2></div><div style="display:contents" dir="auto"><p id="34944831-32d3-80d1-b479-d01bd3d1921b" class="">ご提示いただいた動画は、人気タワーディフェンスゲーム『御城プロジェクト:RE（城プロ）』の新キャラクター、<strong>[暁星]大坂城</strong>の性能を紹介・実戦検証した内容です。</p></div><div style="display:contents" dir="auto"><p id="34944831-32d3-803d-b149-fdd25692e448" class="">動画に基づき、このキャラクターの主な特徴と性能をまとめました。</p></div><div style="display:contents" dir="auto"><h3 id="34944831-32d3-80a4-ab65-c94b3c6080f5" class=""><strong>[暁星]大坂城 の主な性能・特徴</strong></h3></div><div style="display:contents" dir="auto"><p id="34944831-32d3-806e-a474-c4c5fd973ae0" class="">[暁星]大坂城は、歌舞のサポート能力を内蔵しながら、強力な攻撃力を持つアタッカーとしても機能する、非常に強力なキャラクター（いわゆる「ぶち壊れ」性能）として紹介されています [<a href="http://www.youtube.com/watch?v=cnkNIpNtYp4&amp;t=111">01:51</a>]。</p></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8065-a041-feb372aa3fb4" class="bulleted-list"><li style="list-style-type:disc"><strong>特技：巨大化ごとのバフ [</strong><strong><a href="http://www.youtube.com/watch?v=cnkNIpNtYp4&amp;t=14">00:14</a></strong><strong>]</strong><div style="display:contents" dir="auto"><ul id="34944831-32d3-8087-9f57-d7e366f04a48" class="bulleted-list"><li style="list-style-type:circle">巨大化するたびに、射程内の城娘の攻撃上昇と被ダメージ軽減、全城娘の射程と攻撃を強化します。</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80f6-8bfd-f0f71e17efe6" class="bulleted-list"><li style="list-style-type:circle">大坂城自身には効果が1.5倍適用されるため、最大化時には<strong>攻撃60%上昇、被ダメ60%軽減、射程+60、攻撃+300</strong>という破格の自己バフがかかります [<a href="http://www.youtube.com/watch?v=cnkNIpNtYp4&amp;t=39">00:39</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80be-a225-ff528e8fa1e5" class="bulleted-list"><li style="list-style-type:disc"><strong>特殊能力：ガンランスのような挙動 [</strong><strong><a href="http://www.youtube.com/watch?v=cnkNIpNtYp4&amp;t=49">00:49</a></strong><strong>]</strong><div style="display:contents" dir="auto"><ul id="34944831-32d3-803d-b5c4-eb53d8068a88" class="bulleted-list"><li style="list-style-type:circle">30秒間、射程が1.2倍になり、攻撃が範囲ダメージ（1.5倍）に変化します。</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80a2-a72f-d37b356bc741" class="bulleted-list"><li style="list-style-type:circle">敵撃破時の獲得気力が2増加するインフラ性能も備えており、さらにマップ上のマス移動も可能です [<a href="http://www.youtube.com/watch?v=cnkNIpNtYp4&amp;t=59">00:59</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80aa-8001-eb7dd3de4d9d" class="bulleted-list"><li style="list-style-type:disc"><strong>特殊攻撃：竜撃砲（超火力） [</strong><strong><a href="http://www.youtube.com/watch?v=cnkNIpNtYp4&amp;t=69">01:09</a></strong><strong>]</strong><div style="display:contents" dir="auto"><ul id="34944831-32d3-8091-a539-eed97ea40497" class="bulleted-list"><li style="list-style-type:circle">指定方向に攻撃の7倍のダメージを与え、味方の攻撃を強化します。</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8055-b9eb-ce43f9306238" class="bulleted-list"><li style="list-style-type:circle">特殊能力中にストックを全消費して放つと、ダメージとバフ量が最大3倍まで増加する、まさに「竜撃砲」と呼べる超火力を発揮します [<a href="http://www.youtube.com/watch?v=cnkNIpNtYp4&amp;t=78">01:18</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-801f-ad09-e60339516a1b" class="bulleted-list"><li style="list-style-type:disc"><strong>計略：圧倒的なダメージ増幅 [</strong><strong><a href="http://www.youtube.com/watch?v=cnkNIpNtYp4&amp;t=89">01:29</a></strong><strong>]</strong><div style="display:contents" dir="auto"><ul id="34944831-32d3-809a-b297-c7387cbc3440" class="bulleted-list"><li style="list-style-type:circle">対象の耐久が高いほど与えるダメージが上昇（最大1.8倍）し、射程内の敵が受けるダメージも1.5倍にします。</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8063-b5af-da0d6b69b0a4" class="bulleted-list"><li style="list-style-type:circle">自身の火力と相まって、とんでもないダメージを叩き出せます [<a href="http://www.youtube.com/watch?v=cnkNIpNtYp4&amp;t=107">01:47</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="34944831-32d3-80fe-883b-c170de4bd232" class=""><strong>実戦・ビジュアル</strong></h3></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80ee-bf4e-fe0d6faf13c6" class="bulleted-list"><li style="list-style-type:disc">動画後半では、高難易度コンテンツ「オンボス7層（マックス審議）」での検証が行われており、圧倒的な火力で余裕を持ってクリアする様子が収められています [<a href="http://www.youtube.com/watch?v=cnkNIpNtYp4&amp;t=121">02:01</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-806c-86b8-da546d0411e1" class="bulleted-list"><li style="list-style-type:disc">投稿者は彼女のビジュアル（ボンテージ風の衣装）から、特撮作品の「マグマ星人」や「闇落ちアイドル」を連想すると述べています [<a href="http://www.youtube.com/watch?v=cnkNIpNtYp4&amp;t=350">05:50</a>]。</li></ul></div><div style="display:contents" dir="auto"><h3 id="34944831-32d3-80e5-a7ba-fac4d669ad9c" class=""><strong>動画情報</strong></h3></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80b2-a76e-e563106e9db4" class="bulleted-list"><li style="list-style-type:disc"><strong>タイトル:</strong> 【城娘紹介】圧倒的火力で焼き払うガンランス！竜撃砲！[暁星]大坂城を紹介！【御城プロジェクト:RE】</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80c1-9aed-f3e88bbdfe3c" class="bulleted-list"><li style="list-style-type:disc"><strong>チャンネル:</strong> おひげチャンネル</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80d8-a12f-e3af869b88a2" class="bulleted-list"><li style="list-style-type:disc"><strong>動画URL:</strong> <a href="https://www.youtube.com/watch?v=cnkNIpNtYp4">https://www.youtube.com/watch?v=cnkNIpNtYp4</a></li></ul></div><div style="display:contents" dir="auto"><p id="34944831-32d3-80af-9e97-f229eaf71269" class="">
+</p></div><div style="display:contents" dir="auto"><p id="34944831-32d3-8077-92a2-e916e129b416" class="">
+</p></div><div style="display:contents" dir="auto"><h2 id="34944831-32d3-80f7-b7db-d90ae1aa2ff5" class="">Tier表</h2></div><div style="display:contents" dir="auto"><p id="34944831-32d3-80a4-a513-eee3716a03f3" class="">Tier表</p></div><div style="display:contents" dir="auto"><p id="34944831-32d3-8092-a080-fa64fc461237" class="">御城プロジェクト:RE（城プロRE）」の最強キャラランク（Tier表）解説動画、2026年1月版の「遠近編（パート3）」です。</p></div><div style="display:contents" dir="auto"><p id="34944831-32d3-8021-9cfe-fad35713c042" class="">動画内では、2025年の急激なキャラ性能インフレを踏まえ、高難易度での活躍度や汎用性の高さからキャラを評価しています。主な解説内容は以下の通りです。</p></div><div style="display:contents" dir="auto"><h3 id="34944831-32d3-8068-adcd-d2dba82cff6b" class="">武器種別の主な評価キャラ</h3></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80d0-aa34-f416f7e88db7" class="bulleted-list"><li style="list-style-type:disc"><strong>陣貝（最重要武器種）</strong><div style="display:contents" dir="auto"><ul id="34944831-32d3-80d1-a740-ce716d0777f2" class="bulleted-list"><li style="list-style-type:circle"><strong>正月 小早川城（SSランク）</strong>: 現状、圧倒的最強キャラ。持っているかどうかで戦力に大きな差が出るレベルと評されています [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=150">02:30</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8047-90e9-fb3a0ab991da" class="bulleted-list"><li style="list-style-type:circle"><strong>夏 聚楽第（Sランク）</strong>: 山属性編成の要。巨大化コスト35%軽減が非常に重要です [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=174">02:54</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80a2-b1d7-dd1be06b1914" class="bulleted-list"><li style="list-style-type:disc"><strong>軍船（高コスト・高性能）</strong><div style="display:contents" dir="auto"><ul id="34944831-32d3-8003-bcbb-c79285d3b450" class="bulleted-list"><li style="list-style-type:circle"><strong>ゴールデン・ハインド</strong>: 火力よりも「気」の生産能力が極めて高く、編成全体のパワーを底上げする存在として1番高く評価されています [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=296">04:56</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-807d-bf7a-d5f59d3cbda2" class="bulleted-list"><li style="list-style-type:circle"><strong>ドレッドノート</strong>: 条件が揃った時の爆発的な火力が「ゲーム性を破壊するレベル」と評されています [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=370">06:10</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-804c-93a0-f968a8b6ddf4" class="bulleted-list"><li style="list-style-type:disc"><strong>鞭</strong><div style="display:contents" dir="auto"><ul id="34944831-32d3-805a-8653-ec9471bd42b1" class="bulleted-list"><li style="list-style-type:circle"><strong>ハロウィン チフティチ（SSランク）</strong>: 山属性最高のアタッカー [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=71">01:11</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-805f-8555-c67cc1d8878e" class="bulleted-list"><li style="list-style-type:circle"><strong>L ドラード（SSランク）</strong>: 編成特技による「撃破時獲得気の増加」が非常に強力で、アタッカー性能も高いです [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=91">01:31</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8001-b5e1-c347661b6650" class="bulleted-list"><li style="list-style-type:disc"><strong>茶器（新たな必須枠）</strong><div style="display:contents" dir="auto"><ul id="34944831-32d3-8048-95c2-d63bf43f63ad" class="bulleted-list"><li style="list-style-type:circle"><strong>雲切城</strong>: 味方を永続的に隠密化できる能力が革命的で、従来の常識を覆す配置を可能にします [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=439">07:19</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-807b-8837-ecbec5d57258" class="bulleted-list"><li style="list-style-type:circle"><strong>京都新城</strong>: 重複バフを持ち、汎用性が高い。近畿地方特攻も現環境で有利です [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=461">07:41</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-806b-847a-d0e8e372060f" class="bulleted-list"><li style="list-style-type:disc"><strong>その他</strong><div style="display:contents" dir="auto"><ul id="34944831-32d3-8085-8166-fc61dafc17ac" class="bulleted-list"><li style="list-style-type:circle"><strong>アイドル 安土城</strong>: 射程内の味方の計略再使用時間を短縮する要員として、特に山属性で重宝されます [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=517">08:37</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="34944831-32d3-80cb-88c7-dfcc95820049" class="">殿堂入り（Tier0）の城娘たち</h3></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-802a-969c-e1bed5215d79" class="bulleted-list"><li style="list-style-type:disc"><strong>刀：</strong> [完勝] 織田信長 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=48">00:48</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80ad-9595-ced717d90f5f" class="bulleted-list"><li style="list-style-type:disc"><strong>槍：</strong> [お月見] castle_hiko_shirone [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=58">00:58</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-805e-9b59-dcb909705c89" class="bulleted-list"><li style="list-style-type:disc"><strong>槌：</strong> [裏] カンジル宮殿 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=81">01:21</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-809c-80c7-fce5a35c2ae3" class="bulleted-list"><li style="list-style-type:disc"><strong>盾：</strong> [正月] 城塞都市ディーテ [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=102">01:42</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80ba-9be3-ed885eae00f3" class="bulleted-list"><li style="list-style-type:disc"><strong>拳：</strong> [学園] 金剛山城 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=117">01:57</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8052-ad2c-e3c4c9a1e77c" class="bulleted-list"><li style="list-style-type:disc"><strong>鎌：</strong> [裏] 長谷堂城 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=135">02:15</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80b4-a14f-f07e9b9bd31d" class="bulleted-list"><li style="list-style-type:disc"><strong>戦棍：</strong> [懸智] 諏訪ヶ崎館 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=146">02:26</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-809f-89d8-f12742352cfb" class="bulleted-list"><li style="list-style-type:disc"><strong>双剣：</strong> [完勝] 豊臣秀吉、[天明] 岐阜城 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=161">02:41</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8000-849e-d6aec6711b79" class="bulleted-list"><li style="list-style-type:disc"><strong>弓：</strong> [城ボ] 岡豊城 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=171">02:51</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8057-ab4a-e4a17b085fe4" class="bulleted-list"><li style="list-style-type:disc"><strong>石弓：</strong> [裏] 岡山城 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=178">02:58</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8018-8ff5-d578c094c326" class="bulleted-list"><li style="list-style-type:disc"><strong>鉄砲：</strong> [完勝] 織田信長 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=193">03:13</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8074-adca-e32aa5808f88" class="bulleted-list"><li style="list-style-type:disc"><strong>歌舞：</strong> [啓乱] 室町第 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=201">03:21</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80a8-aa97-ff282d854c96" class="bulleted-list"><li style="list-style-type:disc"><strong>法術：</strong> 天一閣 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=213">03:33</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8079-93ec-f5baf77cefc2" class="bulleted-list"><li style="list-style-type:disc"><strong>鈴：</strong> [正月] 平安京 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=229">03:49</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8026-9cb5-fdd86167b9c2" class="bulleted-list"><li style="list-style-type:disc"><strong>祓串：</strong> [赤譜] 新府城 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=241">04:01</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-802d-873b-eaab100a108a" class="bulleted-list"><li style="list-style-type:disc"><strong>本：</strong> [城ボ] 多賀城 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=255">04:15</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80cd-80bb-ff74471470c2" class="bulleted-list"><li style="list-style-type:disc"><strong>投剣：</strong> [学園] 千方窟 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=264">04:24</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8095-9262-f9522ba8cd92" class="bulleted-list"><li style="list-style-type:disc"><strong>鞭：</strong> [完勝] 豊臣秀吉 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=271">04:31</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-80b1-9f88-ce356a8f27d6" class="bulleted-list"><li style="list-style-type:disc"><strong>陣貝：</strong> [夏] ポエナリ城 [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=281">04:41</a>]</li></ul></div><div style="display:contents" dir="auto"><ul id="34944831-32d3-8071-8a16-db6a11a4695f" class="bulleted-list"><li style="list-style-type:disc"><strong>軍船：</strong> ドレッドノート [<a href="http://www.youtube.com/watch?v=uQmWHN4ExQw&amp;t=289">04:49</a>]</li></ul></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-8044-b54f-c05cd46be59e" class="">
+</p></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-80c9-bbaa-ec07fc3a58b4" class="">「【城プロRE】最強キャラランク表(Tier表)_2026年1月版_part3/3 ～遠近編～」に基づき、遠近両用（遠近）武器種の評価をまとめました。</p></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-80b0-9f14-f0453a52dcfe" class="">この動画では、SSからEまでの6段階評価のうち、特に上位のキャラクターが紹介されています。</p></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-8037-aed2-d4d79078895f" class="">1. 陣貝（最重要武器種）</h3></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-8080-a989-e02bbcd22c57" class="">動画内で「城プロで最も重要」「編成に入れないことはありえない」と強調されている武器種です。</p></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80b1-9b56-c55c313c410a" class="bulleted-list"><li style="list-style-type:disc"><strong>SS：正月 小早川城</strong> [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=145">02:25</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-8068-884d-cd6864190f5b" class="bulleted-list"><li style="list-style-type:circle">現状、圧倒的最強キャラクター。持っているかどうかで戦力に大きな差が出るレベル。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80b4-8e99-ed9ea87ca585" class="bulleted-list"><li style="list-style-type:disc"><strong>S：夏 鉢形城</strong> [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=163">02:43</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-8086-9236-e70094ef34ed" class="bulleted-list"><li style="list-style-type:circle">正月 小早川城のほぼ下位互換的な性能ですが、山属性編成やハデスの地獄では依然として必須級。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8025-ab73-f28d0f9f6e39" class="bulleted-list"><li style="list-style-type:circle">巨大化コスト35%軽減が非常に強力 [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=192">03:12</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80d2-b056-ee714e426e2e" class="bulleted-list"><li style="list-style-type:disc"><strong>A：正月 四代目江戸城</strong> [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=220">03:40</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-803b-a7fa-c69860160e9d" class="bulleted-list"><li style="list-style-type:circle">平属性の陣貝筆頭ですが、上位2人と比べると性能は落ちるとされています。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-80e5-9d44-fee748797b10" class="">2. 茶器（新たなインフラ枠）</h3></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-8036-ac22-fabdaaf58e04" class="">陣貝に次ぐ、必須級のサポート枠として注目されています。</p></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80a7-8201-c5a8da0a27ed" class="bulleted-list"><li style="list-style-type:disc"><strong>S：雲切城</strong> [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=440">07:20</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-80b8-ad04-e25876e94470" class="bulleted-list"><li style="list-style-type:circle">味方を永続的に「隠密」にできる計略が革命的。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80ac-9a71-f5a96791df13" class="bulleted-list"><li style="list-style-type:disc"><strong>S：京都新城</strong> [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=462">07:42</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-802f-9f97-faca55d18389" class="bulleted-list"><li style="list-style-type:circle">重複バフを持ち、計略で味方の攻撃対象を増やせる点が強力。軍船との相性も抜群。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-8056-964a-f8c3c8ef7c6a" class="">3. 軍船</h3></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-804d-9e31-fa44f07deb93" class="">コストは重いものの、水上配置でのボーナスや多彩な武器種が強みです。</p></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8082-9dd4-f9fd356c4887" class="bulleted-list"><li style="list-style-type:disc"><strong>SS：ゴールデン・ハインド</strong> [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=291">04:51</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-8060-936f-c7f83d35ffd9" class="bulleted-list"><li style="list-style-type:circle">「気」の生産能力が極めて高く、巨大化コストも半分。編成に入れるだけでパワーが爆上がりします。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8026-9432-cca8ec3917b9" class="bulleted-list"><li style="list-style-type:disc"><strong>S：ドレッドノート</strong> [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=370">06:10</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-8060-bb45-fb45171d673d" class="bulleted-list"><li style="list-style-type:circle">火力に特化した性能。条件が揃えばゲームバランスを破壊するほどの超火力を出せます [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=389">06:29</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8024-94d9-c5ebcb7b5305" class="bulleted-list"><li style="list-style-type:disc"><strong>S：サレム</strong> [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=318">05:18</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-80e4-8480-e709677f774a" class="bulleted-list"><li style="list-style-type:circle">地獄単体属性のため、ハデスの地獄で活躍。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8090-9eb6-c2c32d2bf5e8" class="bulleted-list"><li style="list-style-type:disc"><strong>A：ビクトリー号</strong> [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=352">05:52</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-8052-947c-c0155d68890d" class="bulleted-list"><li style="list-style-type:circle">限定軍船の中では古めですが、バランスが良く初心者にも扱いやすい。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-8044-a2aa-fe2e309f07a1" class="">4. 鞭</h3></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-801e-92b4-fad1697b3e2d" class="">アタッカーとして優秀なキャラが揃っています。</p></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8059-a2ed-fc09d7955c02" class="bulleted-list"><li style="list-style-type:disc"><strong>SS：ハロウィン チフティチ</strong> [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=71">01:11</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-80e9-9d2b-f10fe8c80069" class="bulleted-list"><li style="list-style-type:circle">山属性最高のアタッカー。「異伝 鬼ヶ島」よりも強いとの評価。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-808f-a689-c6a508429375" class="bulleted-list"><li style="list-style-type:disc"><strong>SS：エル・ドラード</strong> [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=92">01:32</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-80b3-939a-f83cc20ce5f4" class="bulleted-list"><li style="list-style-type:circle">「撃破時気の増加」効果が重複するため、非常に強力。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-806f-b676-d0aaa17779f0" class="">5. 刀（剣）</h3></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8082-8cb0-d713f92b362c" class="bulleted-list"><li style="list-style-type:disc"><strong>A：夏 鉢形城（刀）</strong> [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=44">00:44</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-800a-aa13-c55304bf5459" class="bulleted-list"><li style="list-style-type:circle">計略短縮35%と被ダメバフを持ち、平属性の計略短縮要員として優秀。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-80fd-a2a0-c0960e9ec6ca" class="">6. その他・無属性</h3></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8090-8809-d1d289ca8ab9" class="bulleted-list"><li style="list-style-type:disc"><strong>S：アイドル安土城&amp;1/2</strong> [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=519">08:39</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-8095-881f-e3f905078d83" class="bulleted-list"><li style="list-style-type:circle">山属性の計略短縮要員兼アタッカー。高難易度のオシリス等でも活躍。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-80ab-ae39-eaf0040f4f9a" class="">動画の総括として、2025年からの1年間でキャラ性能のインフレが激化しており、上位キャラと中堅キャラの格差が広がっているため、これらの上位キャラを優先的に入手することが推奨されています [<a href="http://www.youtube.com/watch?v=fQE3q_o7Hds&amp;t=565">09:25</a>]。</p></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-806d-a977-e1ef38fe5c28" class="">
+</p></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-8064-a907-e13fbc8c6974" class="">2026年1月時点の『御城プロジェクト:RE』における遠隔武器種の最強キャラランク（Tier表）が紹介されています。高難易度での活躍度と汎用性の高さが評価基準となっています。</p></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-804d-ab6c-d6d02a6d9898" class="">主な武器種ごとの評価と注目キャラは以下の通りです。</p></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-80be-aa24-fddcddf1c5ea" class="">注目武器種と最強クラスのキャラ</h3></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80ae-87ef-e2bc4114deb7" class="bulleted-list"><li style="list-style-type:disc"><strong>本（現在、最も「ぶっ壊れ」と言われる武器種）</strong><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8093-9898-c4e878864615" class="bulleted-list"><li style="list-style-type:circle"><strong>軍州舞鶴</strong>: 射程全体への遠隔攻撃が可能で、気生産能力も非常に高い。配置コストのみで運用できるため、現環境で圧倒的な性能を誇ります [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=440">07:20</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8051-b5d1-d049f8cd7098" class="bulleted-list"><li style="list-style-type:circle"><strong>アトランティス</strong>: 気生産に加え、序盤から連発できるダメージ計略が非常に強力です [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=525">08:45</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8031-9491-c4886e084a98" class="bulleted-list"><li style="list-style-type:disc"><strong>鉄砲（最強アタッカー枠）</strong><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8015-b54f-cde734e1b8ab" class="bulleted-list"><li style="list-style-type:circle"><strong>四代目江戸城（遊園）</strong>: 画面を覆うほどの広射程と凄まじい火力を持ち、現環境で最強のアタッカーと評されています [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=106">01:46</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80b4-89b8-fc7bbf152b84" class="bulleted-list"><li style="list-style-type:circle"><strong>四代目江戸城（花嫁）</strong>: 遊園版に劣らぬ高火力を持ち、特性の違いで使い分けが可能です [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=126">02:06</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80f0-8c02-e6b835419b8d" class="bulleted-list"><li style="list-style-type:disc"><strong>法術（高いカスタマイズ性）</strong><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80d6-bd39-e2190a64b807" class="bulleted-list"><li style="list-style-type:circle"><strong>正月安土城</strong>: メインアタッカー級の火力に加え、味方への強力なバフも備える万能キャラです [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=233">03:53</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8097-a8fd-c7888e424a52" class="bulleted-list"><li style="list-style-type:circle"><strong>天目山城</strong>: 正月安土城よりも守りとバフを重視した性能。デバフと合わせることで敵の攻撃を大幅に無効化できます [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=255">04:15</a>]。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-806d-b845-cf49f3462764" class="">その他の武器種の評価</h3></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8082-9b58-e91d0d103d3e" class="bulleted-list"><li style="list-style-type:disc"><strong>弓</strong>: <strong>絢爛立花山城</strong>がアタッカーとして優秀。コストが軽く初動に強いのがメリットです [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=33">00:33</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8082-8d23-c411b2eae049" class="bulleted-list"><li style="list-style-type:disc"><strong>石弓</strong>: <strong>月影城</strong>や<strong>打田城</strong>が、蔵や殿のダメージを肩代わりする壁役（デコイ）として非常に優秀です [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=77">01:17</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-801d-a5d7-f51455eaa115" class="bulleted-list"><li style="list-style-type:disc"><strong>歌舞</strong>: <strong>絢爛室町第</strong>が術攻撃や鼓舞効果など多角的に活躍しますが、最近は複合属性の枠争いが激しくなっています [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=159">02:39</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-807c-91d9-feacb602a8e0" class="bulleted-list"><li style="list-style-type:disc"><strong>鈴</strong>: <strong>吉野ヶ岳城</strong>の攻撃速度2.5倍バフや、<strong>絢爛天童城</strong>の撃破気増加バフが強力です [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=324">05:24</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80b4-887a-c41b3d2a493a" class="bulleted-list"><li style="list-style-type:disc"><strong>祓串</strong>: <strong>正月長岡城</strong>が撃破気増加と攻撃対象増加を持ち、別格の強さとされています [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=391">06:31</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-805b-94d1-c6f5a5bd8d7b" class="bulleted-list"><li style="list-style-type:disc"><strong>その他（コラボ等）</strong>: <strong>黒衣の宰相バルバァ</strong>が、地獄属性単体という点も含め、現環境の最強クラスアタッカーとして挙げられています [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=567">09:27</a>]。</li></ul></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-80ec-8812-dcfc8af36319" class="">厳しい評価の武器種</h3></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80ef-bcbb-f0da474dec7f" class="bulleted-list"><li style="list-style-type:disc"><strong>大砲</strong>: 強いキャラが少なく、現在は軍船の劣化版のような立ち位置になっています [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=139">02:19</a>]。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80cf-bcf1-ccf8d2e33ca6" class="bulleted-list"><li style="list-style-type:disc"><strong>杖</strong>: 武器変更ができずカスタマイズ性に欠け、火力に継続性がない点が課題とされています [<a href="http://www.youtube.com/watch?v=RqyJfSPJS7w&amp;t=367">06:07</a>]。</li></ul></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-8033-ab32-c6007c9af589" class="">
+</p></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-80df-9bab-dc8103bde13b" class="">「御城プロジェクト:RE」の10周年を記念した「七星の招城符（10周年感謝）」の交換おすすめ度に関する動画ですね。</p></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-809f-99cb-ca575a429d76" class="">動画内では、今回のラインナップは「歴代最強」と評されており、特に<strong>Tier 1の3体</strong>が非常に強力であると強調されています。</p></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-80fb-88b1-f954b68126ba" class="">交換おすすめ度ランク（Tier表）</h3></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-8092-aa0c-da09afa073e8" class=""><strong>Tier 1（最優先）</strong></h3></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-8065-8176-c6d4453034df" class="">この3体は特に重要で、手持ちの状況に合わせて選ぶことが推奨されています。</p></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80e9-bf7d-dbe897a78958" class="bulleted-list"><li style="list-style-type:disc"><strong>アトランティス（本 / 地獄・水）</strong> [<a href="http://www.youtube.com/watch?v=pdrPMN6DEks&amp;t=52">00:52</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-8016-8680-f9cdf7bb16bb" class="bulleted-list"><li style="list-style-type:circle">1年前は1万円の限定販売だったキャラが無料配布。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-802a-8c9a-d4e8a2d52db0" class="bulleted-list"><li style="list-style-type:circle"><strong>気生産（アルティア型）</strong>、射程バフ、被撃時気増加など汎用サポート能力が極めて高い。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8082-8215-d7cd9523d526" class="bulleted-list"><li style="list-style-type:circle">計略は範囲極大のダメージ＋鈍足＋ノックバックで、最高難易度のハデス等でも活躍。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8069-ba50-f3037902d6a6" class="bulleted-list"><li style="list-style-type:disc"><strong>雲切城（茶器 / 平山）</strong> [<a href="http://www.youtube.com/watch?v=pdrPMN6DEks&amp;t=138">02:18</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-800a-9383-f26a9d6421c2" class="bulleted-list"><li style="list-style-type:circle">貴重な平山属性の星7茶器。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-803a-a12c-ce60cff3508a" class="bulleted-list"><li style="list-style-type:circle">味方全体に<strong>隠密を付与</strong>できるユニークな性能を持ち、全員隠密という独自の戦略が可能。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8076-8f7d-dd8b33437de0" class="bulleted-list"><li style="list-style-type:disc"><strong>京都新城（茶器 / 平）</strong> [<a href="http://www.youtube.com/watch?v=pdrPMN6DEks&amp;t=211">03:31</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-80e4-acbf-fce906987ca7" class="bulleted-list"><li style="list-style-type:circle">平属性の星7茶器。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-803b-b4d2-e770e9ebe23d" class="bulleted-list"><li style="list-style-type:circle">味方の<strong>攻撃対象数を増やす</strong>能力が強力で、特に近畿地方の城娘（聖夜大阪城、正月江戸城など）や最新の「威伝 江戸城」との相性が抜群。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-8063-8c15-d807b1d212f2" class=""><strong>Tier 2（優秀なサポート）</strong></h3></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80a3-98da-c30f09377b8b" class="bulleted-list"><li style="list-style-type:disc"><strong>鶴ヶ岡城（歌舞 / 平）</strong> [<a href="http://www.youtube.com/watch?v=pdrPMN6DEks&amp;t=295">04:55</a>]<div style="display:contents" dir="auto"><ul id="34a44831-32d3-807d-b37e-f58692923c5e" class="bulleted-list"><li style="list-style-type:circle">汎用サポート枠として優秀。Tier 1の3体を持っている場合に推奨。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-8019-806f-c69f29730ae7" class="bulleted-list"><li style="list-style-type:circle">気生産トークンを持つが、アトランティスに比べると配置や生存面に制約がある。</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-80d0-8708-eae5a17afb3c" class=""><strong>Tier 3（アタッカー枠）</strong></h3></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-8032-b763-e2d30f673408" class="">アタッカーはサポート役に比べると優先度が下がりますが、以下のキャラが挙げられています。</p></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-801b-a27d-f63231e59df8" class="bulleted-list"><li style="list-style-type:disc"><strong>二条城（斬撃 / 平）</strong> [<a href="http://www.youtube.com/watch?v=pdrPMN6DEks&amp;t=361">06:01</a>]：被ダメージ軽減と吸収効果で高い生存能力を持つ。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80d1-badd-f1449aa5447f" class="bulleted-list"><li style="list-style-type:disc"><strong>ルーブル宮殿（投剣 / 平・水）</strong> [<a href="http://www.youtube.com/watch?v=pdrPMN6DEks&amp;t=388">06:28</a>]：デバフ効果が強力で、射程も長く火力が高い。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80aa-80f1-f8c769ee0c5a" class="bulleted-list"><li style="list-style-type:disc"><strong>ランカスター城（トークン / 平）</strong> [<a href="http://www.youtube.com/watch?v=pdrPMN6DEks&amp;t=428">07:08</a>]：術ダメージを与えるトークンが強力だが、反射に弱い面も。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80d8-8752-fa1dd87213a1" class="bulleted-list"><li style="list-style-type:disc"><strong>白井城（拳 / 水）</strong> [<a href="http://www.youtube.com/watch?v=pdrPMN6DEks&amp;t=455">07:35</a>]：水単体のタンク系アタッカー。初回計略短縮の編成特技持ち。</li></ul></div><div style="display:contents" dir="auto"><ul id="34a44831-32d3-80a0-a6b7-d97fec5065eb" class="bulleted-list"><li style="list-style-type:disc"><strong>千鳥城（平）</strong> [<a href="http://www.youtube.com/watch?v=pdrPMN6DEks&amp;t=483">08:03</a>]：好みの範囲。</li></ul></div><div style="display:contents" dir="auto"><h3 id="34a44831-32d3-8075-b729-e291b4032622" class="">まとめ</h3></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-8096-9135-c3271e88a186" class="">基本的には<strong>アトランティス、雲切城、京都新城</strong>の3体から、自分の持っていない属性や武器種（特に茶器）を補う形で選ぶのがベストとのことです。 [<a href="http://www.youtube.com/watch?v=pdrPMN6DEks&amp;t=272">04:32</a>]</p></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-80cf-8046-d281ae551c23" class="">竹内さんがプレイされている「御城プロジェクト:RE」の攻略に、ぜひお役立てください。</p></div><div style="display:contents" dir="auto"><p id="34a44831-32d3-80d0-bb82-ffcde46ca1e8" class="">動画URL: <a href="https://www.youtube.com/watch?v=pdrPMN6DEks">https://www.youtube.com/watch?v=pdrPMN6DEks</a></p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
